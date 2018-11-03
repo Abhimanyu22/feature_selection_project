@@ -1,5 +1,5 @@
-# Default imports
 import pandas as pd
+import matplotlib.pyplot as plt
 from matplotlib.pyplot import yticks, xticks, subplots, set_cmap
 plt.switch_backend('agg')
 data = pd.read_csv('data/house_prices_multivariate.csv')
@@ -9,8 +9,12 @@ data = pd.read_csv('data/house_prices_multivariate.csv')
 def plot_corr(data, size=11):
     corr = data.corr()
     fig, ax = subplots(figsize=(size, size))
-    set_cmap("YlOrRd")
+    set_cmap('YlOrRd')
     ax.matshow(corr)
     xticks(range(len(corr.columns)), corr.columns, rotation=90)
     yticks(range(len(corr.columns)), corr.columns)
-    return ax
+    
+    return
+
+
+
